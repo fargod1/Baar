@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baar Market</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background: #f4f4f4;
+    }
+    nav button {
+      margin: 0 5px;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    section {
+      padding: 1.5rem;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Baar Market</h1>
+    <p id="subtitle">Suuqaaga Kalsoonida Leh</p>
+  </header>
+
+  <nav>
+    <button onclick="setLanguage('so')">Af-Soomaali</button>
+    <button onclick="setLanguage('en')">English</button>
+  </nav>
+
+  <section>
+    <h2 id="welcome-title">Soo dhawoow</h2>
+    <p id="welcome-text">
+      Baar Market waa goob lagu iibiyo badeecooyin tayo sare leh, oo qiimo jaban leh. Waxaan kuugu soo bandhigaynaa cuntooyin, cabitaan, iyo agab nololeed oo kala duwan.
+    </p>
+  </section>
+
+  <section>
+    <h2 id="services-title">Adeegyadayada</h2>
+    <ul id="services-list">
+      <li>Cuntooyin iyo cabitaan tayo sare leh</li>
+      <li>Qiimo macquul ah</li>
+      <li>Macmiil si wanaagsan loo adeego</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 id="contact-title">Xiriir</h2>
+    <p id="contact-text">Nala soo xiriir: +252 900000000 | Email: info@baarmarket.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Baar Market</p>
+  </footer>
+
+  <script>
+    const content = {
+      so: {
+        title: "Baar Market",
+        subtitle: "Suuqaaga Kalsoonida Leh",
+        welcomeTitle: "Soo dhawoow",
+        welcomeText: "Baar Market waa goob lagu iibiyo badeecooyin tayo sare leh, oo qiimo jaban leh. Waxaan kuugu soo bandhigaynaa cuntooyin, cabitaan, iyo agab nololeed oo kala duwan.",
+        servicesTitle: "Adeegyadayada",
+        servicesList: [
+          "Cuntooyin iyo cabitaan tayo sare leh",
+          "Qiimo macquul ah",
+          "Macmiil si wanaagsan loo adeego"
+        ],
+        contactTitle: "Xiriir",
+        contactText: "Nala soo xiriir: +252 900000000 | Email: info@baarmarket.com"
+      },
+      en: {
+        title: "Baar Market",
+        subtitle: "Your Trusted Marketplace",
+        welcomeTitle: "Welcome",
+        welcomeText: "Baar Market is a place where you can find high-quality products at affordable prices. We offer food, drinks, and various household items.",
+        servicesTitle: "Our Services",
+        servicesList: [
+          "High-quality food and drinks",
+          "Affordable prices",
+          "Excellent customer service"
+        ],
+        contactTitle: "Contact",
+        contactText: "Contact us: +252 900000000 | Email: info@baarmarket.com"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("title").textContent = content[lang].title;
+      document.getElementById("subtitle").textContent = content[lang].subtitle;
+      document.getElementById("welcome-title").textContent = content[lang].welcomeTitle;
+      document.getElementById("welcome-text").textContent = content[lang].welcomeText;
+      document.getElementById("services-title").textContent = content[lang].servicesTitle;
+
+      const servicesList = document.getElementById("services-list");
+      servicesList.innerHTML = "";
+      content[lang].servicesList.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        servicesList.appendChild(li);
+      });
+
+      document.getElementById("contact-title").textContent = content[lang].contactTitle;
+      document.getElementById("contact-text").textContent = content[lang].contactText;
+    }
+  </script>
+</body>
+</html>
